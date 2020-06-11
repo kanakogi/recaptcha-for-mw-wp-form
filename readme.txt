@@ -1,4 +1,4 @@
-=== MW WP Form reCAPTCHA v3 ===
+=== reCAPTCHA v3 for MW WP Form ===
 Contributors: kanakogi
 Donate link: http://www.amazon.co.jp/registry/wishlist/2TUGZOYJW8T4T/?_encoding=UTF8&camp=247&creative=7399&linkCode=ur2&tag=wpccc-22
 Tags: : form, mail, MW WP Form, reCAPTCHA
@@ -16,7 +16,7 @@ Required MW WP Form (https://wordpress.org/plugins/mw-wp-form/)
 
 == Installation ==
 1. Activate MW WP Form plugin.
-2. Upload the entire `mw-wp-form-recaptcha-v3` folder to the `/wp-content/plugins/` directory.
+2. Upload the entire `recaptcha-v3-for-mw-wp-form` folder to the `/wp-content/plugins/` directory.
 3. Activate this plugin through the 'Plugins' menu in WordPress.
 
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Controllers;
+namespace MW_WP_Form_reCAPTCHA\Controllers;
 
-use MW_WP_Form_reCAPTCHA_V3\Classes\MW_WP_Form_ReCaptchaV3_Validation;
+use MW_WP_Form_reCAPTCHA\Classes\MW_WP_Form_ReCaptchaV3_Validation;
 
 class ValidationController
 {

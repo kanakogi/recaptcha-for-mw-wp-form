@@ -1,6 +1,6 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Controllers;
+namespace MW_WP_Form_reCAPTCHA\Controllers;
 
 class Controller
 {

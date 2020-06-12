@@ -1,23 +1,21 @@
 <?php
 
-use MW_WP_Form_reCAPTCHA_V3\Config;
-use MW_WP_Form_reCAPTCHA_V3\Classes\Functions;
+use MW_WP_Form_reCAPTCHA\Config;
+use MW_WP_Form_reCAPTCHA\Classes\Functions;
 ?>
 
 <div class="wrap">
 
     <?php
     if ($result) {
-        Functions::display_notice('updated', '保存しました。');
+        Functions::display_notice('updated', __('Saved.', Config::TEXTDOMAIN));
     }
     ?>
 
-    <h1>reCAPTACHA v3 Setting</h1>
+    <h1><?php _e('reCAPTACHA v3 Setting', Config::TEXTDOMAIN) ?></h1>
 
     <p>
-        <a href="https://www.google.com/recaptcha/admin/create" target="_blank">
-            ここからKeysを取得してください。
-        </a>
+        <?php _e('Get Keys from <a href="https://www.google.com/recaptcha/admin/create" target="_blank">here</a>.', Config::TEXTDOMAIN) ?>
     </p>
 
     <form method="post" action="" class="wpt-form" enctype="multipart/form-data">
@@ -47,7 +45,7 @@ use MW_WP_Form_reCAPTCHA_V3\Classes\Functions;
                 <td>
                     <input type="text" name="secret_key" class="regular-text" value="">
                     <?php if ($option['secret_key'] != '') : ?>
-                        <p class="description">データが保存されています</p>
+                        <p class="description"><?php _e('Secret Key has been saved.', Config::TEXTDOMAIN) ?></p>
                     <?php endif; ?>
                 </td>
             </tr>
@@ -59,10 +57,15 @@ use MW_WP_Form_reCAPTCHA_V3\Classes\Functions;
     </form>
 
     <hr>
-    <p>次のショートコードをMW WP FORM に入力してください。</p>
+    <h2><?php _e('Usage', Config::TEXTDOMAIN) ?></h2>
+    <p><?php _e('Step1: Please enter the following short code into the MW WP FORM.', Config::TEXTDOMAIN) ?></p>
     <textarea style="width:500px; height: 4em; resize: none;" readonly>
 [mwform_hidden name="recaptcha-v3"]
 [mwform_error keys="recaptcha-v3"]
 </textarea>
+    <div><img src="<?= Config::plugin_url() ?>assets/img/admin/pic-0.png" alt=""></div>
+
+    <p style="margin-top: 30px"><?php _e('Step2: Check the reCAPTCHA V3 of Validation Rule.', Config::TEXTDOMAIN) ?></p>
+    <div><img src="<?= Config::plugin_url() ?>assets/img/admin/pic-1.png" alt=""></div>
 
 </div>

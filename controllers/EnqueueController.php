@@ -1,8 +1,8 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Controllers;
+namespace MW_WP_Form_reCAPTCHA\Controllers;
 
-use MW_WP_Form_reCAPTCHA_V3\Config;
+use MW_WP_Form_reCAPTCHA\Config;
 
 class EnqueueController
 {

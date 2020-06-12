@@ -1,6 +1,6 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3;
+namespace MW_WP_Form_reCAPTCHA;
 
 class Config
 {
@@ -8,6 +8,7 @@ class Config
     const NAME = 'mwfrv3';
     const OPTION = 'mwfrv3';
     const NONCE = 'mwfrv3-nonce';
+    const TEXTDOMAIN = 'recaptcha-for-mw-wp-form';
 
     public static function plugin_url()
     {

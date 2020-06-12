@@ -1,6 +1,6 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Classes;
+namespace MW_WP_Form_reCAPTCHA\Classes;
 
 class Util
 {

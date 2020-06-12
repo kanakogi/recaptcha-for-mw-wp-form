@@ -1,19 +1,19 @@
 <?php
 /*
-Plugin Name: reCAPTCHA v3 for MW WP Form
-Description: MW WP Form で reCAPTCHA v3 が使えるようになります。
+Plugin Name: reCAPTCHA for MW WP Form
+Description: You can use reCAPTCHA v3 on the MW WP Form.
 Author: Nakashima Masahiro
 Version: 1.0.0
-Plugin URI: https://github.com/kanakogi/recaptcha-v3-for-mw-wp-form
+Plugin URI: https://github.com/kanakogi/recaptcha-for-mw-wp-form
 Author URI: https://flipclap.co.jp
 License: GPLv2 or later
 Text Domain: mwfrv3
  */
 
-use MW_WP_Form_reCAPTCHA_V3\Controllers\AdminController;
-use MW_WP_Form_reCAPTCHA_V3\Controllers\ValidationController;
-use MW_WP_Form_reCAPTCHA_V3\Controllers\EnqueueController;
-use MW_WP_Form_reCAPTCHA_V3\Config;
+use MW_WP_Form_reCAPTCHA\Controllers\AdminController;
+use MW_WP_Form_reCAPTCHA\Controllers\ValidationController;
+use MW_WP_Form_reCAPTCHA\Controllers\EnqueueController;
+use MW_WP_Form_reCAPTCHA\Config;
 
 // MW WP Form プラグインを有効化をチェック
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
@@ -21,7 +21,7 @@ if (is_plugin_active('mw-wp-form/mw-wp-form.php')) {
 
     include plugin_dir_path(__FILE__) . '/config.php';
 
-    class MW_WP_Form_reCAPTCHA_V3
+    class MW_WP_Form_reCAPTCHA
     {
         public $plugin_dir_path;
         private $default_options = array(
@@ -35,6 +35,7 @@ if (is_plugin_active('mw-wp-form/mw-wp-form.php')) {
             $this->plugin_dir_path = plugin_dir_path(__FILE__);
 
             // Load
+            load_plugin_textdomain(Config::TEXTDOMAIN, false, basename(dirname(__FILE__)) . '/languages');
             add_action('plugins_loaded', array($this, 'load_init_files'), 1);
             add_action('plugins_loaded', array($this, 'init'), 11);
             // activation
@@ -88,5 +89,5 @@ if (is_plugin_active('mw-wp-form/mw-wp-form.php')) {
             }
         }
     }
-    new MW_WP_Form_reCAPTCHA_V3();
+    new MW_WP_Form_reCAPTCHA();
 }

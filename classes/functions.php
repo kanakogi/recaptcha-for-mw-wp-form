@@ -1,8 +1,8 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Classes;
+namespace MW_WP_Form_reCAPTCHA\Classes;
 
-use MW_WP_Form_reCAPTCHA_V3\Classes\Util;
+use MW_WP_Form_reCAPTCHA\Classes\Util;
 
 class Functions extends Util
 { }

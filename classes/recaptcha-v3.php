@@ -1,8 +1,8 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Classes;
+namespace MW_WP_Form_reCAPTCHA\Classes;
 
-use MW_WP_Form_reCAPTCHA_V3\Config;
+use MW_WP_Form_reCAPTCHA\Config;
 use MWF_Config;
 use MW_WP_Form_Abstract_Validation_Rule;
 

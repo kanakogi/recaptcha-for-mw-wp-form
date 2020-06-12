@@ -1,9 +1,9 @@
 <?php
 
-namespace MW_WP_Form_reCAPTCHA_V3\Controllers;
+namespace MW_WP_Form_reCAPTCHA\Controllers;
 
-use MW_WP_Form_reCAPTCHA_V3\Controllers\Controller;
-use MW_WP_Form_reCAPTCHA_V3\Config;
+use MW_WP_Form_reCAPTCHA\Controllers\Controller;
+use MW_WP_Form_reCAPTCHA\Config;
 use MWF_Config;
 
 class AdminController extends Controller

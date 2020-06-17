@@ -29,7 +29,7 @@ class MW_WP_Form_ReCaptchaV3_Validation extends MW_WP_Form_Abstract_Validation_R
         $is_reCAPTCHA = isset($options['is_reCAPTCHA']) ? $options['is_reCAPTCHA'] : '';
 
         $plugin_option = get_option(Config::OPTION);
-        $secret_key = isset($plugin_option['secret_key']) ? $plugin_option['secret_key'] : '';
+        $secret_key = isset($plugin_option['secret_key']) ? esc_html($plugin_option['secret_key']) : '';
 
         /**
          * 何らかのチェックをして、エラーがあったらエラーメッセージを返す
@@ -37,7 +37,7 @@ class MW_WP_Form_ReCaptchaV3_Validation extends MW_WP_Form_Abstract_Validation_R
         if ($is_reCAPTCHA == true) {
             if (!isset($secret_key) || $secret_key == '') {
                 $defaults = array(
-                    'message' => 'reCAPTCHA Secret key を入力してください。'
+                    'message' => __('Enter reCAPTCHA Secret key.', Config::TEXTDOMAIN)
                 );
                 $options = array_merge($defaults, $options);
                 return $options['message'];
@@ -45,14 +45,22 @@ class MW_WP_Form_ReCaptchaV3_Validation extends MW_WP_Form_Abstract_Validation_R
 
             if (isset($value) && $value != '' && $name == 'recaptcha-v3' && isset($_POST['recaptcha-v3']) && !isset($_POST['submitBack'])) {
                 $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $value;
-                $verifyResponse = file_get_contents($url);
-                $reCAPTCHA = json_decode($verifyResponse);
+                $response = wp_remote_get($url);
+                if (!is_wp_error($response) && $response["response"]["code"] === 200) {
+                    $reCAPTCHA = json_decode($response["body"]);
 
-                if ($reCAPTCHA->success) {
-                    // 人間だからOK
+                    if ($reCAPTCHA->success) {
+                        // 人間だからOK
+                    } else {
+                        $defaults = array(
+                            'message' => __('Invalid reCAPTCHA Secret key.', Config::TEXTDOMAIN)
+                        );
+                        $options = array_merge($defaults, $options);
+                        return $options['message'];
+                    }
                 } else {
                     $defaults = array(
-                        'message' => 'reCAPTCHA Secret key が不正です。'
+                        'message' => __('Failed reCAPTCHA access.', Config::TEXTDOMAIN)
                     );
                     $options = array_merge($defaults, $options);
                     return $options['message'];

@@ -46,11 +46,11 @@ class AdminController extends Controller
             // }
 
             if (isset($_POST['site_key']) && $_POST['site_key'] != '') {
-                $option['site_key'] = esc_html($_POST['site_key']);
+                $option['site_key'] = sanitize_text_field($_POST['site_key']);
             }
 
             if (isset($_POST['secret_key']) && $_POST['secret_key'] != '') {
-                $option['secret_key'] = esc_html($_POST['secret_key']);
+                $option['secret_key'] = sanitize_text_field($_POST['secret_key']);
             }
 
             return update_option(Config::OPTION, $option);

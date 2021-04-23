@@ -16,7 +16,7 @@ class ValidationController
     {
         // 追加するバリデーションルールのオブジェクトは MW_Validation_Rule クラスを継承している必要があります。
         $instance = new MW_WP_Form_ReCaptchaV3_Validation();
-        $validation_rules[$instance->getName()] = $instance;
+        $validation_rules[$instance->get_name()] = $instance;
         return $validation_rules;
     }
 }

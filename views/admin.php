@@ -49,6 +49,12 @@ use MW_WP_Form_reCAPTCHA\Classes\Functions;
                     <?php endif; ?>
                 </td>
             </tr>
+			<tr>
+				<th>Threshold score (0.00 - 1.00)</th>
+				<td>
+					<input type="number" name="threshold_score" min="0" max="1" step="0.01" class="regular-text" value="<?= $option['threshold_score']?>">
+				</td>
+			</tr>
         </table>
 
         <input type="hidden" name="save_setting" value="1">

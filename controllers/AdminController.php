@@ -53,6 +53,13 @@ class AdminController extends Controller
                 $option['secret_key'] = sanitize_text_field($_POST['secret_key']);
             }
 
+            if ( isset( $_POST['threshold_score'] ) && is_numeric( $_POST['threshold_score'] ) )
+            {
+                $val = (float) $_POST['threshold_score'];
+                $val = min( max( $val, 0 ), 1 );
+                $option['threshold_score'] = sprintf('%.2f', $val);
+            }
+
             return update_option(Config::OPTION, $option);
         } else {
             return false;

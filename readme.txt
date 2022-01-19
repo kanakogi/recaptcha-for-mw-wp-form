@@ -1,10 +1,10 @@
 === reCAPTCHA for MW WP Form ===
-Contributors: kanakogi
+Contributors: kanakogi, abatanx, yamamotohrs, shizumi
 Donate link: http://www.amazon.co.jp/registry/wishlist/2TUGZOYJW8T4T/?_encoding=UTF8&camp=247&creative=7399&linkCode=ur2&tag=wpccc-22
 Tags: : form, mail, MW WP Form, reCAPTCHA
 Requires at least: 4.0 or higher
-Tested up to: 5.7.1
-Stable tag: 1.0.2
+Tested up to: 5.8.3
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ Required MW WP Form (https://wordpress.org/plugins/mw-wp-form/)
 
 
 == Changelog ==
+**1.1.0 - 19 Jan 2022**
+Update for threshold score.
+
 **1.0.2 - 23 Apr 2021**
 Modify ValidationController.
 

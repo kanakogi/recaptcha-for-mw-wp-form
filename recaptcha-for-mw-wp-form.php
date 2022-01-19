@@ -3,9 +3,8 @@
 Plugin Name: reCAPTCHA for MW WP Form
 Description: You can use reCAPTCHA v3 on the MW WP Form.
 Author: Nakashima Masahiro
-Version: 1.0.2
+Version: 1.1.0
 Plugin URI: https://github.com/kanakogi/recaptcha-for-mw-wp-form
-Author URI: https://flipclap.co.jp
 License: GPLv2 or later
 Text Domain: mwfrv3
  */
@@ -28,6 +27,7 @@ if (is_plugin_active('mw-wp-form/mw-wp-form.php')) {
             // 'is_recaptcha' => '',
             'site_key' => '',
             'secret_key' => '',
+			'threshold_score' => ''
         );
 
         public function __construct()

@@ -3,8 +3,8 @@ Contributors: kanakogi, abatanx, yamamotohrs, shizumi
 Donate link: http://www.amazon.co.jp/registry/wishlist/2TUGZOYJW8T4T/?_encoding=UTF8&camp=247&creative=7399&linkCode=ur2&tag=wpccc-22
 Tags: : form, mail, MW WP Form, reCAPTCHA
 Requires at least: 4.0 or higher
-Tested up to: 5.8.3
-Stable tag: 1.1.0
+Tested up to: 5.9.3
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,10 @@ Required MW WP Form (https://wordpress.org/plugins/mw-wp-form/)
 
 
 == Changelog ==
+**1.1.1 - 14 Apr 2022**
+Add null check for $post variable to eliminate warning message on 404 pages.
+Thanks miurakazunori.
+
 **1.1.0 - 19 Jan 2022**
 Update for threshold score.
 

@@ -17,7 +17,7 @@ class EnqueueController
         global $post;
         $option = get_option(Config::OPTION);
         $site_key = esc_html($option['site_key']);
-        if (has_shortcode($post->post_content, 'mwform_formkey') && !empty($site_key)) {
+        if (!empty($post) && has_shortcode($post->post_content, 'mwform_formkey') && !empty($site_key)) {
             wp_enqueue_script('jquery');
             wp_enqueue_script("recaptcha-script", 'https://www.google.com/recaptcha/api.js?render=' . $site_key, array('jquery'), array(), true);
 

@@ -12,7 +12,7 @@ use MW_WP_Form_reCAPTCHA\Classes\Functions;
     }
     ?>
 
-    <h1><?php _e('reCAPTACHA v3 Setting', Config::TEXTDOMAIN) ?></h1>
+    <h1><?php _e('reCAPTCHA v3 Setting', Config::TEXTDOMAIN) ?></h1>
 
     <p>
         <?php _e('Get Keys from <a href="https://www.google.com/recaptcha/admin/create" target="_blank">here</a>.', Config::TEXTDOMAIN) ?>

@@ -23,13 +23,26 @@ class EnqueueController
 
             $data = <<< EOL
 grecaptcha.ready(function() {
-    grecaptcha.execute('$site_key', {
-            action: 'homepage'
-        }).then(function(token) {
-            var recaptchaResponse = jQuery('input[name="recaptcha-v3"]');
-            recaptchaResponse.val(token);
-        });
-    });
+	jQuery('form').on('submit', function(e) {
+		e.preventDefault();
+		grecaptcha.execute('$site_key', {
+			action: 'homepage'
+		}).then(function(token) {
+			var recaptchaResponse = jQuery('input[name="recaptcha-v3"]');
+			recaptchaResponse.val(token);
+			let form = e.target;
+			if (form.querySelector("[name=submitConfirm]")) {
+				const confirmButtonValue = form.querySelector("[name=submitConfirm]").value;
+				const confirmButton = document.createElement("input");
+				confirmButton.type = "hidden";
+				confirmButton.value = confirmButtonValue;
+				confirmButton.name = "submitConfirm";
+				form.appendChild(confirmButton);
+			}
+			form.submit();
+		});
+	});
+});
 EOL;
             wp_add_inline_script('recaptcha-script', $data);
         }

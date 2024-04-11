@@ -37,14 +37,14 @@ use MW_WP_Form_reCAPTCHA\Classes\Functions;
             <tr>
                 <th>Site Key</th>
                 <td>
-                    <input type="text" name="site_key" class="regular-text" value="<?= $option['site_key'] ?>">
+                    <input type="text" name="site_key" class="regular-text" value="<?= $option['site_key'] ?? '' ?>">
                 </td>
             </tr>
             <tr>
                 <th>Secret Key</th>
                 <td>
                     <input type="text" name="secret_key" class="regular-text" value="">
-                    <?php if ($option['secret_key'] != '') : ?>
+                    <?php if (isset($option['secret_key']) && $option['secret_key'] != '') : ?>
                         <p class="description"><?php _e('Secret Key has been saved.', Config::TEXTDOMAIN) ?></p>
                     <?php endif; ?>
                 </td>
@@ -52,7 +52,7 @@ use MW_WP_Form_reCAPTCHA\Classes\Functions;
 			<tr>
 				<th>Threshold score (0.00 - 1.00)</th>
 				<td>
-					<input type="number" name="threshold_score" min="0" max="1" step="0.01" class="regular-text" value="<?= $option['threshold_score']?>">
+					<input type="number" name="threshold_score" min="0" max="1" step="0.01" class="regular-text" value="<?= $option['threshold_score'] ?? '' ?>">
 				</td>
 			</tr>
         </table>

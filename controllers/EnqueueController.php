@@ -38,6 +38,13 @@ grecaptcha.ready(function() {
                 confirmButton.value = confirmButtonValue;
                 confirmButton.name = "submitConfirm";
                 form.appendChild(confirmButton);
+            } else if (form.querySelector("[name=submitBack]")) {
+                const backButtonValue = form.querySelector("[name=submitBack]").value;
+                const backButton = document.createElement("input");
+                backButton.type = "hidden";
+                backButton.value = backButtonValue;
+                backButton.name = "submitBack";
+                form.appendChild(backButton);
             }
             form.submit();
         });

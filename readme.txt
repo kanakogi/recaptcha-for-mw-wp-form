@@ -4,7 +4,7 @@ Donate link: http://www.amazon.co.jp/registry/wishlist/2TUGZOYJW8T4T/?_encoding=
 Tags: : form, mail, MW WP Form, reCAPTCHA
 Requires at least: 4.0 or higher
 Tested up to: 6.5.2
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,10 @@ Required MW WP Form (https://wordpress.org/plugins/mw-wp-form/)
 
 
 == Changelog ==
+**1.1.4 - 15 4 2024**
+Fix.
+Thanks pull request by k-toda.
+
 **1.1.2 - 23 10 2023**
 Typo correction. Changed reCAPTACHA to reCAPTCHA. 
 Thanks pull request by iknowsummer.

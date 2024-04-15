@@ -4,7 +4,7 @@ Donate link: http://www.amazon.co.jp/registry/wishlist/2TUGZOYJW8T4T/?_encoding=
 Tags: : form, mail, MW WP Form, reCAPTCHA
 Requires at least: 4.0 or higher
 Tested up to: 6.5.2
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

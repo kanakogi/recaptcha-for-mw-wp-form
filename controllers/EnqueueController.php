@@ -23,7 +23,7 @@ class EnqueueController
 
             $data = <<< EOL
 grecaptcha.ready(function() {
-    jQuery('form').on('submit', function(e) {
+    document.querySelector('form').addEventListener('submit', function(e) {
         e.preventDefault();
         grecaptcha.execute('$site_key', {
             action: 'homepage'
@@ -38,7 +38,7 @@ grecaptcha.ready(function() {
                 confirmButton.value = confirmButtonValue;
                 confirmButton.name = "submitConfirm";
                 form.appendChild(confirmButton);
-            } else if (form.querySelector("[name=submitBack]")) {
+            } else if (e.submitter.name == 'submitBack' && form.querySelector("[name=submitBack]")) {
                 const backButtonValue = form.querySelector("[name=submitBack]").value;
                 const backButton = document.createElement("input");
                 backButton.type = "hidden";
